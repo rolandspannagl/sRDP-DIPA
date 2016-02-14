@@ -470,13 +470,16 @@
 }%
 
 %% Danksagungen ebenfalls ueber Umgebung
-\newenvironment{Danksagung}{\null\vfill%vertikal Zentrieren
+\newenvironment{acknowledgements}{\null\vfill%vertikal Zentrieren
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\@dankname}
+    \pagestyle{empty}
     \section*{\@dankname}}%Section anlegen
     {\vfill\null\vfill%vertikal Zentrieren
 \newpage}%
 
 %% Literatur
-\newenvironment{Literatur}{\iflanguage{english}{}{\def\refname{Literaturverzeichnis}}%
+\newenvironment{literature}{\iflanguage{english}{}{\def\refname{Literaturverzeichnis}}%
 						   \phantomsection% damit Link an die richtige Stelle zeigt
 						   %Literaturverzeichnis ins TOC hinzufuegen
 						   \addcontentsline{toc}{chapter}{\refname}%
